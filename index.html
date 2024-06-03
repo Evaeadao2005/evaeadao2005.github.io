@@ -35,7 +35,7 @@
             z-index: 2;
             text-align: center;
             background: rgba(255, 255, 255, 0.9);
-            padding: 30px 40px;
+            padding: 30px;
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 400px;
@@ -44,10 +44,12 @@
             animation: fadeIn 1s ease-out;
         }
         .container img {
-            max-width: 80px; /* Ajuste de tamanho */
-            opacity: 0.8; /* Ajuste de opacidade */
-            margin-bottom: 20px;
-            animation: fadeIn 1s ease-out;
+            width: 100px; /* Tamanho da logo */
+            height: 100px; /* Tamanho da logo */
+            border-radius: 50%; /* Tornar a logo redonda */
+            margin: 20px auto; /* Centralizar a logo */
+            animation: rotate 4s linear infinite; /* Adicionar animação de rotação */
+            transition: opacity 0.3s ease; /* Adicionar transição de opacidade */
         }
         .container h1 {
             color: #FF5722;
@@ -136,6 +138,14 @@
             }
             50% {
                 transform: scale(1.05);
+            }
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
             }
         }
         .credit {
