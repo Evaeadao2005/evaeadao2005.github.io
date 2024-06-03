@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp | Pizzaria Diferenciado</title>
     <link rel="icon" href="https://raw.githubusercontent.com/Evaeadao2005/evaeadao2005.github.io/images/logo.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
         body {
             font-family: 'Roboto', sans-serif;
             display: flex;
@@ -15,9 +15,9 @@
             height: 100vh;
             margin: 0;
             color: #fff;
-            overflow: hidden;
             background: url('https://raw.githubusercontent.com/Evaeadao2005/evaeadao2005.github.io/images/860.jfif') no-repeat center center/cover;
             position: relative;
+            overflow: hidden;
         }
         body::before {
             content: "";
@@ -69,29 +69,11 @@
             border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             animation: pulse 2s infinite;
+            margin-top: 20px;
         }
         .container a:hover {
             background-color: #E64A19;
             transform: scale(1.05);
-        }
-        .container button {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: #FF7043;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            margin-top: 20px;
-            animation: slideInUp 1.2s ease-out;
-        }
-        .container button:hover {
-            background-color: #FF5722;
-        }
-        .container button:disabled {
-            background-color: #FFA07A;
-            cursor: not-allowed;
         }
         @media (max-width: 600px) {
             .container {
@@ -103,7 +85,7 @@
             .container p {
                 font-size: 14px;
             }
-            .container a, .container button {
+            .container a {
                 padding: 10px 20px;
                 font-size: 14px;
             }
@@ -136,50 +118,24 @@
                 opacity: 1;
             }
         }
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
         @keyframes pulse {
-            0% {
+            0%, 100% {
                 transform: scale(1);
             }
             50% {
                 transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <img src="hhttps://github.com/Evaeadao2005/evaeadao2005.github.io/blob/images/logo.png?raw=true" alt="Logo da Pizzaria">
+        <img src="https://raw.githubusercontent.com/Evaeadao2005/evaeadao2005.github.io/images/logo.png" alt="Logo da Pizzaria">
         <h1>Aviso Importante</h1>
         <p>Para agilizar seu atendimento, pedimos que faça seu pedido pelo nosso cardápio digital antes de entrar em contato pelo WhatsApp.</p>
         <p>O atendimento pelo WhatsApp pode passar por uma fila de espera.</p>
         <a href="https://juazeirodonorte.pizzariadiferenciado.com" target="_blank">Ver Cardápio Digital</a>
-        <button onclick="redirectToWhatsApp()">Ir para o WhatsApp</button>
+        <a href="https://api.whatsapp.com/send?phone=5588997480449&text=Ol%C3%A1%20Pizzaria%20Diferenciado%2C%20eu%20vim%20pelo%20Instagram%20e%20desejo%20atendimento!" target="_blank">Ir para o WhatsApp</a>
     </div>
-
-    <script>
-        function redirectToWhatsApp() {
-            var whatsappUrl = "https://api.whatsapp.com/send?phone=5588997480449&text=Ol%C3%A1%20Pizzaria%20Diferenciado%2C%20eu%20vim%20pelo%20Instagram%20e%20desejo%20atendimento!";
-
-            setTimeout(function() {
-                window.location.href = whatsappUrl;
-            }, 5000);
-
-            document.querySelector("button").innerText = "Redirecionando...";
-            document.querySelector("button").disabled = true;
-        }
-    </script>
 </body>
 </html>
