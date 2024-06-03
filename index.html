@@ -12,6 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             margin: 0;
             color: #fff;
@@ -68,12 +69,22 @@
             text-decoration: none;
             border-radius: 8px;
             transition: background-color 0.3s ease, transform 0.3s ease;
-            animation: pulse 2s infinite;
             margin-top: 20px;
+        }
+        .container a:first-of-type {
+            animation: pulse 2s infinite;
+        }
+        .container a:last-of-type {
+            background-color: #4CAF50;
+            margin-top: 10px;
         }
         .container a:hover {
             background-color: #E64A19;
             transform: scale(1.05);
+        }
+        .container a:last-of-type:hover {
+            background-color: #388E3C;
+            transform: none;
         }
         @media (max-width: 600px) {
             .container {
@@ -126,6 +137,14 @@
                 transform: scale(1.05);
             }
         }
+        .credit {
+            position: relative;
+            z-index: 2;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
     </style>
 </head>
 <body>
@@ -136,6 +155,9 @@
         <p>O atendimento pelo WhatsApp pode passar por uma fila de espera.</p>
         <a href="https://juazeirodonorte.pizzariadiferenciado.com" target="_blank">Ver Cardápio Digital</a>
         <a href="https://api.whatsapp.com/send?phone=5588997480449&text=Ol%C3%A1%20Pizzaria%20Diferenciado%2C%20eu%20vim%20pelo%20Instagram%20e%20desejo%20atendimento!" target="_blank">Ir para o WhatsApp</a>
+    </div>
+    <div class="credit">
+        Criado por @victordalmon
     </div>
 </body>
 </html>
