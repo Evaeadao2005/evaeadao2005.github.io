@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhatsApp | Pizzaria Diferenciado</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Evaeadao2005/evaeadao2005.github.io/images/logo.ico" type="image/x-icon">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
         body {
@@ -13,11 +14,24 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: linear-gradient(to right, #FF7043, #FF5722);
             color: #fff;
             overflow: hidden;
+            background: url('https://raw.githubusercontent.com/Evaeadao2005/evaeadao2005.github.io/images/860.jfif') no-repeat center center/cover;
+            position: relative;
+        }
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 87, 34, 0.8); /* Laranja com opacidade */
+            z-index: 1;
         }
         .container {
+            position: relative;
+            z-index: 2;
             text-align: center;
             background: rgba(255, 255, 255, 0.9);
             padding: 30px 40px;
@@ -26,6 +40,11 @@
             max-width: 400px;
             width: 90%;
             margin: 10px;
+            animation: fadeIn 1s ease-out;
+        }
+        .container img {
+            max-width: 100px;
+            margin-bottom: 20px;
             animation: fadeIn 1s ease-out;
         }
         .container h1 {
@@ -142,17 +161,17 @@
 </head>
 <body>
     <div class="container">
+        <img src="https://github.com/Evaeadao2005/evaeadao2005.github.io/blob/images/logo.png" alt="Logo da Pizzaria">
         <h1>Aviso Importante</h1>
         <p>Para agilizar seu atendimento, pedimos que faça seu pedido pelo nosso cardápio digital antes de entrar em contato pelo WhatsApp.</p>
         <p>O atendimento pelo WhatsApp pode passar por uma fila de espera.</p>
-        <a href="https://juazeirodonorte.pizzariadiferenciado.com/pizzaria_diferenciado_juazeiro#promocoes" target="_blank">Ver Cardápio Digital</a>
+        <a href="https://juazeirodonorte.pizzariadiferenciado.com" target="_blank">Ver Cardápio Digital</a>
         <button onclick="redirectToWhatsApp()">Ir para o WhatsApp</button>
     </div>
 
     <script>
         function redirectToWhatsApp() {
-            var whatsappNumber = "5588997480449";
-            var whatsappUrl = "https://wa.me/" + whatsappNumber;
+            var whatsappUrl = "https://api.whatsapp.com/send?phone=5588997480449&text=Ol%C3%A1%20Pizzaria%20Diferenciado%2C%20eu%20vim%20pelo%20Instagram%20e%20desejo%20atendimento!";
 
             setTimeout(function() {
                 window.location.href = whatsappUrl;
